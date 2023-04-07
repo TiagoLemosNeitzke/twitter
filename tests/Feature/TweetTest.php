@@ -28,7 +28,19 @@ it('should be able to create a tweet', function () {
 
 });
 
-todo('should make sure that only authenticated user can tweet');
+it('should make sure that only authenticated user can tweet', function(){
+    livewire(Create::class)
+    ->set('body', 'this is my first commit')
+    ->call('tweet')
+    ->assertForbidden();
+
+    actingAs(User::factory()->create());
+
+    livewire(Create::class)
+    ->set('body', 'this is my fisrt tweet')
+    ->call('tweet')
+    ->assertEmitted('tweet::created');
+});
 
 todo('body is required');
 

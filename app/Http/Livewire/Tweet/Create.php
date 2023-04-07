@@ -35,5 +35,7 @@ class Create extends Component
         );
         
         $this->emit('tweet::created');
+
+        $this->reset('body');
     }
 }

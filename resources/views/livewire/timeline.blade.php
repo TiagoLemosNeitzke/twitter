@@ -1,4 +1,4 @@
-<div>
+<div class="mt-10 text-white text-lg">
     @foreach ($tweets as $tweet)
         <div class="flex p-4 border-b border-gray-400">
            {{--  <div class="mr-2">

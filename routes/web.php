@@ -19,10 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('image', function(){
-    return asset('public/J7xQMO5D1kCt5agvYtSd5cbkXedhAMZQbs3eeHrv.jpg');
-})->name('image');
-
 Route::view('twitter', 'twitter')->middleware('auth')->name('twitter');
 
 Route::get('/dashboard', function () {

@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('twitter', 'twitter')->name('twitter');
+Route::get('image', function(){
+    return asset('public/J7xQMO5D1kCt5agvYtSd5cbkXedhAMZQbs3eeHrv.jpg');
+})->name('image');
+
+Route::view('twitter', 'twitter')->middleware('auth')->name('twitter');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -22,7 +22,7 @@
     <div class="container mx-auto grid h-screen grid-cols-4">
 
         {{-- MENU --}}
-        <div class="pt-2 text-[#f7f9f9]">
+        <div class="space-y-20 pt-2 text-[#f7f9f9]">
             <div class="space-y-4">
                 <x-menu.item route="#">
                     <x-slot:icon>
@@ -133,9 +133,26 @@
                 </x-menu.item>
 
                 <div>
-                    <button class="bg-[#1a8cd8] font-bold px-20 text-xl rounded-full py-4">Tweet</button>
+                    <button class="rounded-full bg-[#1d9bf0] hover:bg-[#1a8cd8] px-20 py-4 text-xl font-bold">Tweet</button>
                 </div>
-            </div>        
+            </div>
+            <div class="flex p-2 mr-4 flex-row space-x-4 bg-transparent hover:bg-gray-200 hover:bg-opacity-10 rounded-full">
+                <div class="">
+                    <img class="h-12 w-12 rounded-full"
+                        src="{{ Vite::asset('storage/app/'.auth()->user()->avatar) }}"
+                        alt="Avatar">
+                </div>
+                <div class="flex flex-col">
+                    <div>
+                        <span class="font-black">
+                           {{ auth()->user()->name }}
+                        </span>
+                    </div>
+                    <div>
+                        <span class="text-[#808d9a]">@LemosNeitzke...</span>
+                    </div>
+                </div>
+            </div>
         </div>
         {{-- END MENU --}}
         <div class="col-span-2 border-x-[0.625px] border-[#2f3336]">as</div>

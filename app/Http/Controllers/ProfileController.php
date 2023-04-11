@@ -28,13 +28,14 @@ class ProfileController extends Controller
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $path = $request->validated('avatar')->store('avatar');
-        $url = Storage::url($path);
-        //dd($url, $request->user());
+        Storage::disk('public')->put($path, 'avatar');
+       
+       // dd($url, $path);
         
         $request->user()->fill([
             'name' => $request->validated('name'),
             'email' => $request->validated('email'),
-            'avatar' => $url,
+            'avatar' => $path,
         ]);
 
         if ($request->user()->isDirty('email')) {

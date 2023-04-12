@@ -1,11 +1,13 @@
-<div class="rounded-lg bg-white p-8 shadow-lg">
-    <div class="flex flex-col w-60 mb-4">
-        <textarea class="border-slate-400 rounded-md" wire:model='body' placeholder="What's happening?"></textarea>
+<div class="w-full border-y-[0.625px] border-[#38444d]">
+    <div class="flex w-full flex-row pl-4 pt-2">
+    <img src="{{ Vite::asset('storage/app/'.auth()->user()->avatar) }}" class="w-12 h-12 rounded-full">
+        <textarea class="w-full text-xl rounded-md border-none bg-[#15202b]" wire:model='body' placeholder="What's happening?"></textarea>
 
-        <x-input-error messages="{{ $errors->first('body') }}"/>
+        <x-input-error messages="{{ $errors->first('body') }}" />
     </div>
-
-    <x-primary-button class="bg-slate-400" wire:click='tweet'>
-        Tweet
-    </x-primary-button>
+    <div class="flex justify-end p-4">
+        <x-primary-button wire:click='createTweet' class="w-20 h-10">
+            Tweet
+        </x-primary-button>
+    </div>
 </div>

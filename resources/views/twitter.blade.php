@@ -22,7 +22,7 @@
     <div class="container mx-auto grid h-screen grid-cols-4">
 
         {{-- MENU --}}
-        <div class="space-y-20 pt-2 text-[#f7f9f9]">
+        <div class="space-y-20 pt-6 text-[#f7f9f9]">
             <div class="space-y-4">
                 <x-menu.item route="#">
                     <x-slot:icon>
@@ -133,7 +133,7 @@
                 </x-menu.item>
 
                 <div>
-                    <button class="rounded-full bg-[#1d9bf0] hover:bg-[#1a8cd8] px-20 py-4 text-xl font-bold">Tweet</button>
+                    <x-primary-button class="px-20 py-4 text-xl">Tweet</x-primary-button>
                 </div>
             </div>
             <div class="flex p-2 mr-4 flex-row space-x-4 bg-transparent hover:bg-gray-200 hover:bg-opacity-10 rounded-full">
@@ -155,7 +155,20 @@
             </div>
         </div>
         {{-- END MENU --}}
-        <div class="col-span-2 border-x-[0.625px] border-[#2f3336]">as</div>
+        <div class="col-span-2 border-x-[0.625px] border-[#2f3336]">
+            <div class="mt-4 mb-8">
+                <a class="font-bold text-lg pl-1 pb-16" href="#">Home</a>
+            </div>
+            <div class="mb-6">
+                <ul class="flex flex-row justify-between">
+                    <li class="p-6 bg-transparent hover:bg-gray-200 hover:bg-opacity-10 flex flex-row justify-center items-center"><a href="#" class="active:font-bold active:text-white text-[#808d9a]">For you</a></li>
+                    <li class="border-b-4 border-[#1d9bf0] p-6 bg-transparent hover:bg-gray-200 hover:bg-opacity-10 flex flex-row justify-center items-center"><a href="#" class="font-bold text-white">Following</a></li>
+                    <li class="p-6 bg-transparent hover:bg-gray-200 hover:bg-opacity-10 flex flex-row justify-center items-center"><a href="#" class="active:font-bold active:text-white text-[#808d9a]">Politics news</a></li>
+                    <li class="p-6 bg-transparent hover:bg-gray-200 hover:bg-opacity-10 flex flex-row justify-center items-center"><a href="#" class="active:font-bold active:text-white text-[#808d9a]">Football</a></li>
+                </ul>
+            </div>
+            <livewire:tweet.create/>
+        </div>
         <div class="">as</div>
     </div>
 

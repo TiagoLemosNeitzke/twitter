@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Http\UploadedFile;
 
 test('profile page is displayed', function () {
     $user = User::factory()->create();
@@ -20,6 +21,7 @@ test('profile information can be updated', function () {
         ->patch('/profile', [
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'avatar' => UploadedFile::fake()->image('avatar.jpg'),
         ]);
 
     $response
@@ -41,6 +43,7 @@ test('email verification status is unchanged when the email address is unchanged
         ->patch('/profile', [
             'name' => 'Test User',
             'email' => $user->email,
+            'avatar' => UploadedFile::fake()->image('avatar.jpg'),
         ]);
 
     $response

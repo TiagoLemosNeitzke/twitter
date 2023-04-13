@@ -13,6 +13,13 @@ class Create extends Component
     use AuthorizesRequests;
 
     public ?string $body = null;
+
+    public $user;
+
+    public function mount()
+    {
+        $this->user = auth()->user();
+    }
     
     public function render():View
     {

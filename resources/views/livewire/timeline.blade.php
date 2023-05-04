@@ -11,11 +11,28 @@
                         {{ $tweet->user->name }}
                     </a>
                 </h5> --}}
-
                 <p class="text-sm">
-                    {{ $tweet->body }}
+                 {{$loop->index}} |  {{ $tweet->body }}
                 </p>
             </div>
         </div>
     @endforeach
+    <div x-data="{
+        observe() {
+            const observer = new IntersectionObserver((entries) => {
+               entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            @this.loadMore();
+                        }
+                    })
+                },
+                {
+                    //threshold: 0.5, // 50% of the element visible, 0 ... 1
+                    rootMargin: '100px',
+                });
+            observer.observe(this.$el);
+        },
+    }" x-init="observe()">
+
+    </div>
 </div>

@@ -16,10 +16,13 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('dashboard');
+})->name('home');
 
 Route::view('twitter', 'twitter')->middleware('auth')->name('twitter');
+Route::get('/subscribe', \App\Http\Controllers\SubscribeController::class)
+    ->name('subscribe')
+    ->middleware(\App\Http\Middleware\Authenticate::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

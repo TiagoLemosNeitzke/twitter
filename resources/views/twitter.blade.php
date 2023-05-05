@@ -96,7 +96,7 @@
                     </x-slot:icon>
                 </x-menu.item>
 
-                <x-menu.item route="#" label="Twitter Blue">
+                <x-menu.item route="/subscribe" label="Twitter Blue">
                     <x-slot:icon>
                         <svg viewBox="0 0 24 24" aria-hidden="true" class="w-6 fill-[#f7f9f9]">
                             <g>
@@ -168,6 +168,7 @@
                 </ul>
             </div>
             <livewire:tweet.create/>
+            <livewire:timeline/>
         </div>
         <div class="">as</div>
     </div>

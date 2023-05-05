@@ -17,6 +17,10 @@ class SubscribeController extends Controller
 
         $user->createOrGetStripeCustomer();
 
+        if($user->subscribed('default')) {
+            return $user->redirectToBillingPortal();
+        }
+
         return $user->newSubscription('default', 'price_1N48zzB4jmMYyyUVtzdb820k')
             ->checkout()
             ->redirect();

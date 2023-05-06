@@ -168,6 +168,7 @@
                 </ul>
             </div>
             <livewire:tweet.create/>
+            <livewire:show-more/>
             <livewire:timeline/>
         </div>
         <div class="">as</div>

@@ -138,9 +138,11 @@
             </div>
             <div class="flex p-2 mr-4 flex-row space-x-4 bg-transparent hover:bg-gray-200 hover:bg-opacity-10 rounded-full">
                 <div class="">
-                    <img class="h-12 w-12 rounded-full"
-                        src="{{ Vite::asset('storage/app/'.auth()->user()->avatar) }}"
-                        alt="Avatar">
+                    @if( auth()->check() )
+                        <img class="h-12 w-12 rounded-full"
+                             src="{{ Vite::asset('storage/app/'.auth()->user()->avatar) }}"
+                             alt="Avatar">
+                    @endif
                 </div>
                 <div class="flex flex-col">
                     <div>

@@ -16,7 +16,7 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('twitter');
 })->name('home');
 
 Route::view('twitter', 'twitter')->middleware('auth')->name('twitter');

@@ -42,7 +42,7 @@ class Create extends Component
             ]
         );
 
-        TweetHasBeenCreated::dispatch();
+        //TweetHasBeenCreated::dispatch();
 
         $this->reset('body');
     }
